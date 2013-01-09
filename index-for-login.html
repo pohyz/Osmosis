@@ -1,0 +1,81 @@
+<!doctype html>
+<html ng-app="app">
+  <header>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular-resource.min.js"></script>
+
+    <script language="javascript" type="text/javascript">
+      angular.module('app', ['ngResource']);
+      function BackendController($scope,$resource){
+        
+        //Replace this url with your final URL from the SingPath API path. 
+        //$scope.remote_url = "localhost:8080";
+        $scope.remote_url = "galaxy-osmosis.appspot.com";
+        $scope.model = "user";
+        $scope.waiting = "Ready";        
+        
+        //resource calls are defined here
+
+        $scope.Model = $resource('http://:remote_url/:email/:password',
+                                {},{'get': {method: 'JSONP', isArray: false, params:{callback: 'JSON_CALLBACK'}}
+                                   }
+                            );
+        
+        //Sign up
+        $scope.signup = function(){
+          var new_user = $resource('http://galaxy-osmosis.appspot.com/signup',
+                        {'signup': { method: 'POST', params: {email:$scope.new_email, password:$scope.new_password} }});
+       
+          $scope.su_waiting = "Loading";
+
+          $scope.signup_status = new_user.$signup(function(response) {
+
+                  $scope.signup_status = response.signup_result;
+                  $scope.su_waiting = "Done";
+
+                }); 
+        };
+        
+        //User login logic
+        $scope.user_login = function(){
+
+          var signin_user = $resource('http://galaxy-osmosis.appspot.com/login',
+                        {'login': { method: 'POST',    params: {email:$scope.email, password:$scope.password} }});
+
+          $scope.waiting = "Logging in";
+
+          $scope.login_status = signin_user.$login(function(response) {
+
+                  $scope.login_status = response.login_result;
+                  $scope.waiting = "Success";
+
+                });
+        };      
+      }
+    </script>
+  </header>
+  <body ng-controller="BackendController" ng-click="gaEvent($event)">
+    Backend:  {{remote_url}} <br>
+    <hr>
+
+      <!--Login Form-->
+      <form ng-submit="user_login()">
+        Email: <input type="text" ng-model="email">
+        Password: <input type="password" ng-model="password">
+        <input type="submit" name="login" value="login">
+      </form>
+      login status: <pre>{{login_status}}</pre>
+      login readiness: {{waiting}}
+      <hr>
+
+      <!-- Sign up form-->
+      Sign up: <br>
+      <form ng-submit="signup()">
+        Email: <input type="text" ng-model="new_email">
+        Password: <input type="password" ng-model="new_password">
+        <input type="submit" name="sign_up" value="Sign up">
+      </form>
+      Sign up status: <pre>{{signup_status}}</pre>
+      Sign up readiness: {{su_waiting}}
+  </body>
+</html>
