@@ -8,74 +8,141 @@
       angular.module('app', ['ngResource']);
       function BackendController($scope,$resource){
         
-        //Replace this url with your final URL from the SingPath API path. 
-        //$scope.remote_url = "localhost:8080";
-        $scope.remote_url = "galaxy-osmosis.appspot.com";
-        $scope.model = "user";
-        $scope.waiting = "Ready";        
-        
+        $scope.waiting = "Ready";
+        $scope.su_waiting = "Ready";
         //resource calls are defined here
-
-        $scope.Model = $resource('http://:remote_url/:email/:password',
-                                {},{'get': {method: 'JSONP', isArray: false, params:{callback: 'JSON_CALLBACK'}}
-                                   }
-                            );
         
+        $scope.Model = $resource('http://galaxy-osmosis.appspot.com/:user_type/:ftn',
+                                {},
+                                {
+                                  'login': {method: 'JSONP', params:{callback: 'JSON_CALLBACK'}, isArray: false},
+                                  'get': {method: 'JSONP', isArray: false, params:{callback: 'JSON_CALLBACK'}},
+                                  'get_user_info': {method: 'JSONP', isArray: false, params:{callback: 'JSON_CALLBACK'}},
+                                  'update_user_info': {method: 'JSONP', isArray: false, params:{callback: 'JSON_CALLBACK'}},
+                                  'signup': {method: 'JSONP', isArray: false, params:{email: $scope.new_email, password: $scope.new_password, callback: 'JSON_CALLBACK'}}
+                                }
+                        );
         //Sign up
         $scope.signup = function(){
-          var new_user = $resource('http://galaxy-osmosis.appspot.com/signup',
-                        {'signup': { method: 'POST', params: {email:$scope.new_email, password:$scope.new_password} }});
        
           $scope.su_waiting = "Loading";
-
-          $scope.signup_status = new_user.$signup(function(response) {
+          
+          data = {'user_type':'user',
+                  'ftn':'signup',
+                  'email':$scope.new_email,
+                  'password':$scope.new_password
+          };
+                
+          $scope.Model.signup(data,function(response) {
 
                   $scope.signup_status = response.signup_result;
                   $scope.su_waiting = "Done";
 
-                }); 
+          }); 
         };
         
         //User login logic
         $scope.user_login = function(){
-
-          var signin_user = $resource('http://galaxy-osmosis.appspot.com/login',
-                        {'login': { method: 'POST',    params: {email:$scope.email, password:$scope.password} }});
-
-          $scope.waiting = "Logging in";
-
-          $scope.login_status = signin_user.$login(function(response) {
+          $scope.waiting = 'Logging in';
+          
+          data = {'user_type':'user',
+                  'ftn':'login',
+                  'email':$scope.email,
+                  'password':$scope.password
+          };
+                
+          $scope.Model.login(data,function(response) {
 
                   $scope.login_status = response.login_result;
-                  $scope.waiting = "Success";
+                  //if($scope.login_status){
+                    
+                    $scope.get_user_info();
+                  //}
+                  $scope.waiting = 'Done';
 
-                });
-        };      
+          });
+        };
+        
+        //Get User Info logic
+        $scope.get_user_info = function(){
+          
+          data = {'user_type':'user',
+                  'ftn':'get_info',
+                  'email':$scope.email
+          };
+          
+          $scope.Model.get_user_info(data, function(response){
+                  
+                  user_info = response.user;
+                  $scope.f_name = user_info.first_name;
+                  $scope.l_name = user_info.last_name;
+                  $scope.qualification = user_info.qualification;
+                  $scope.c_location = user_info.c_location;
+                  $scope.about_user = user_info.about_user;
+          });
+        };
+        
+        //Update user logic
+        $scope.updateUser = function(){
+          
+          data = {'user_type':'user',
+                  'ftn':'update',
+                  'email':$scope.email,
+                  'f_name':$scope.f_name,
+                  'l_name':$scope.l_name,
+                  'qualification':$scope.qualification,
+                  'c_location':$scope.c_location,
+                  'about_user':$scope.about_user
+          };
+          
+          $scope.Model.update_user_info(data, function(response){
+          
+                  update_result = response.update_result;
+                  
+                  if(update_result){
+                    //if update success, get user info
+                    $scope.get_user_info();
+                  }
+          });
+        };
       }
     </script>
   </header>
-  <body ng-controller="BackendController" ng-click="gaEvent($event)">
+  <body ng-controller="BackendController">
     Backend:  {{remote_url}} <br>
     <hr>
 
       <!--Login Form-->
       <form ng-submit="user_login()">
-        Email: <input type="text" ng-model="email">
+        Email: <input type="text" ng-model="email"><br>
         Password: <input type="password" ng-model="password">
         <input type="submit" name="login" value="login">
       </form>
-      login status: <pre>{{login_status}}</pre>
+      login status: {{login_status}}<br>
       login readiness: {{waiting}}
       <hr>
 
       <!-- Sign up form-->
       Sign up: <br>
       <form ng-submit="signup()">
-        Email: <input type="text" ng-model="new_email">
+        Email: <input type="text" ng-model="new_email"><br>
         Password: <input type="password" ng-model="new_password">
         <input type="submit" name="sign_up" value="Sign up">
       </form>
-      Sign up status: <pre>{{signup_status}}</pre>
+      Sign up status: {{signup_status}}<br>
       Sign up readiness: {{su_waiting}}
+      <hr>
+      
+      <!--Update Form-->
+      Update Info: <br>
+      <form ng-submit="updateUser()">
+        First-name: <input type="text" ng-model="f_name">
+        Last-name: <input type="text" ng-model="l_name"><br>
+        Qualification: <input type="text" ng-model="qualification"><br>
+        Current Location: <input type="text" ng-model="c_location"><br>
+        About Me: <input type="text" ng-model="about_user"><br>
+        <input type="submit" name="update" value="Update {{f_name}} {{l_name}} info">
+      </form>
+      
   </body>
 </html>
