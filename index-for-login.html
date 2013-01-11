@@ -5,7 +5,12 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular-resource.min.js"></script>
 
     <script language="javascript" type="text/javascript">
-      angular.module('app', ['ngResource']);
+      angular.module('app', ['ngResource'])
+        /*.config(['$routeProvider', function($routeProvider){
+          $routeProvider.
+            when('/login_success', {templateUrl:'abc.html'});
+        }]);*/
+        
       function BackendController($scope,$resource){
         
         $scope.waiting = "Ready";
@@ -54,10 +59,11 @@
           $scope.Model.login(data,function(response) {
 
                   $scope.login_status = response.login_result;
-                  //if($scope.login_status){
-                    
-                    $scope.get_user_info();
-                  //}
+                  if($scope.login_status){
+                    //$location.path('/login_success');
+                    //$scope.get_user_info();
+                    window.location.href="abc.html";
+                  }
                   $scope.waiting = 'Done';
 
           });
