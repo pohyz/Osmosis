@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app xmlns="http://www.w3.org/1999/html">
   <head>
     <meta charset="utf-8">
     <title>Bootstrap, from Twitter</title>
@@ -8,7 +8,8 @@
     <meta name="author" content="">
     
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-
+    <script src="http://code.angularjs.org/angular-1.0.0rc3.min.js"></script>
+    <script type="text/javascript" src="checkChar.js"></script>
     <!-- Le styles -->
     <link href="../assets/css/bootstrap.css" rel="stylesheet">
     <style type="text/css">
@@ -120,12 +121,41 @@
       <div class = "row-fluid">
 
 	      	<div class = "span8 offset1">
-	      		Team Description <br/><br/>
+	      		<b> Team Descriptionasds</b><br></br>
+                  <div ng-controller="checkChar">
+
+                  <form name="teamDescription">
+                  <textarea name = "description"
+                            ng-maxlength="2500"
+                            ng-change="change()"
+                            ng-model="bar"
+                            class="field span12"
+                            rows="5"> </textarea></br>
+                    <span class="error" ng-show="teamDescription.description.$error.maxlength">
+                     Too long!
+                    </span>
+                      <span> {{left}} </span>
+                      <br>
+
+
+                  </form>
+
+                      </div>
+
+                <form name="email">
 	      		Email address:<br/><br/>
-	      		Website:<br/><br/>
-	      		Current location:<br/><br/>
-	      			      		
-	      	 </div>
+                  <textarea name = "email"rows="1"></textarea>
+
+                    <button type="submit" class="btn btn-success">Update</button>
+                </form>
+
+                Website:<br/><br/>
+                  <textarea name = "website"rows="1" class="field span3"></textarea>
+                  <br/><br/>
+                  Current location:<br/><br/>
+                  <textarea name = "location"rows="1"></textarea>
+
+              </div>
 
 	     </div>			      
 			   
