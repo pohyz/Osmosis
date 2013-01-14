@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Bootstrap, from Twitter</title>
+    <title>Osmosis</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -17,9 +17,61 @@
         padding-bottom: 40px;
       }
       
-     page-header {
-	     	font-size:100pt;
+/*
+     #profile-name{
+     		position:relative;
+     		top:30px;
+     		left:-10px;
+     		
+     		
+	     
       }
+*/
+
+	#pro{
+		position:relative;
+		top:25px;
+		
+		
+		
+		
+	}
+      #welcome_msg{
+	      position:relative;
+	      top: 5px;
+	      float:right;
+	      color:grey;
+	      
+      }
+      
+      #plus_sign{
+	      position:relative;
+	      top: -5px;
+	      left:-10px;
+	      color:red;
+	      
+      }
+      
+      #notify_btn{
+	      position:relative;
+	      top: 0px;
+	      left:10px;
+      
+      }
+      
+      #notify_badge{
+	      position:relative;
+	      top: -5px;
+	      left:-90px;
+
+      }
+      
+      #logo_img{
+	      position:relative;
+	      top: 10px;
+	      left: 0px;
+      }
+
        
       
       
@@ -63,32 +115,29 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Project name</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="#">Action</a></li>
-                  <li><a href="#">Another action</a></li>
-                  <li><a href="#">Something else here</a></li>
-                  <li class="divider"></li>
-                  <li class="nav-header">Nav header</li>
-                  <li><a href="#">Separated link</a></li>
-                  <li><a href="#">One more separated link</a></li>
-                </ul>
-              </li>
+          <img src="img/osmosisLogo.png" width=9% id="logo_img">
+          <div id="welcome_msg">Welcome, {{name}} | <a href="index-for-log-out.html" >Logout</a></div>
+          <br>
+          <br>
+         
+            <ul class="nav" >
+              <li class="active"><a href="#" id="tabcolor"><i class="icon-home icon-white"></i> HOME</a></li>
+              <li><a href="#about" >PROFILE</a></li>
+              <li><a href="#contact">PROJECT CATALOG</a></li>
+              <li><a href="#contact">TEAM CATALOG</a></li>
+              <li><a href="#contact">FAQ</a></li>
+              
             </ul>
-            <form class="navbar-form pull-right">
-              <input class="span2" type="text" placeholder="Email">
-              <input class="span2" type="password" placeholder="Password">
-              <button type="submit" class="btn">Sign in</button>
-            </form>
-          </div><!--/.nav-collapse -->
-        </div>
+            
+            <div align="right">
+            <button class="btn btn-small btn-warning" type="button" id="notify_btn"><b>Notification</b></button><span class="badge badge-important" id="notify_badge">1</span>
+            <button class="btn btn-small btn-primary" type="button">Create Proposal</button>
+            <i class="icon-white icon-plus" id="plus_sign"></i><button class="btn btn-small btn-primary" type="button">Create Project</button>
+            <i class="icon-white icon-plus" id="plus_sign"></i><button class="btn btn-small btn-primary" type="button">Create Team</button>
+            <i class="icon-white icon-plus" id="plus_sign"></i>
+            </div>
+            
+         </div>
       </div>
     </div>
 
@@ -96,9 +145,9 @@
 
       <!-- Main hero unit for a primary marketing message or call to action -->
      
-      <div class="page-header">
+      <div class="page-header" id="pro">
       	
-      	<h2>Profile name</h2>
+      	<h2 id="profile-name">Profile name</h2>
 
       	
       </div>
@@ -119,13 +168,27 @@
 			      
       <div class = "row-fluid">
 
-	      	<div class = "span8 offset1">
+	      	<div class = "span10 offset1">
 	      		Full name: <br/><br/>
 	      		Email address:<br/><br/>
 	      		Personal Website:<br/><br/>
 	      		Current location:<br/><br/>
 	      		Highest qualification:<br/><br/>
 	      		Certification(s):<br/><br/>
+	      		
+	      		<table class="table table-condensed table-striped">
+				 <tr>
+				 
+				 <th>heading</th>
+				 <th>heading</th>
+				 
+				 </tr>
+				 <tr>
+				 <th>heading</th>
+				 <th>heading</th>
+				 </tr>
+				</table>
+	      		
 	      		
 	      	 </div>
 
@@ -159,7 +222,17 @@
                     <div class="accordion-inner">
 <div class = "teams">
   	<div class ="row span12 offset">
-  		
+	 
+	 <div class="pagination pagination-right">
+	  <ul>
+	    <li><a href="#">Prev</a></li>
+	    <li><a href="#">1</a></li>
+	    <li><a href="#">2</a></li>
+	    <li><a href="#">3</a></li>
+	    <li><a href="#">4</a></li>
+	    <li><a href="#">Next</a></li>
+	  </ul>
+	</div>
 	  			
 	  			<u1 class = "thumbnails"> 
 	  				<li class = "span2"> 
