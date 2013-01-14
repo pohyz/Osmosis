@@ -31,32 +31,337 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h3>Welcome to GitHub Pages.</h3>
+        <p>&lt;!DOCTYPE html&gt;
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+  </p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<pre><code>&lt;script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.min.js"&gt;&lt;/script&gt;
+&lt;script src="script.js"&gt;&lt;/script&gt;
+
+&lt;meta charset="utf-8"&gt;
+
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;meta name="description" content=""&gt;
+&lt;meta name="author" content=""&gt;
+
+&lt;!-- Le styles --&gt;
+&lt;link href="../assets/css/bootstrap.css" rel="stylesheet"&gt;
+&lt;link href="../assets/css/bootstrap-responsive.css" rel="stylesheet"&gt;
+
+&lt;style&gt;
+
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+  padding-bottom: 40px;
+  color: #5a5a5a;
+}
+
+
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  margin-bottom: 60px;
+}
+
+.carousel .container {
+  position: relative;
+  z-index: 9;
+}
+
+.carousel-control {
+  height: 80px;
+  margin-top: 0;
+  font-size: 120px;
+  text-shadow: 0 1px 1px rgba(0,0,0,.4);
+  background-color: transparent;
+  border: 0;
+}
+
+.carousel .item {
+  height: 400px;
+}
+.carousel img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 400px;
+}
+
+.carousel-caption {
+  background-color: transparent;
+  position: static;
+  max-width: 550px;
+  padding: 0 20px;
+  margin-top: 200px;
+}
+.carousel-caption h1,
+.carousel-caption .lead {
+  margin: 0;
+  line-height: 1.25;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0,0,0,.4);
+}
+.carousel-caption .btn {
+  margin-top: 10px;
+}
+
+
+
+/* SIGN UP CONTENT
+-------------------------------------------------- */
+
+/* Center align the text next to the carousel */
+
+
+.span4 {
+  text-align: left;
+
+}
+
+#email{
+      position:relative;
+      top:0;
+      left: 50px;
+
+  }
+
+#password{
+      position:relative;
+      top:0;
+      left: 22px;
+
+  }    
+
+#inputEmail{
+      position:relative;
+      top:0;
+      left: -92px;
+}
+
+#inputPassword{
+      position:relative;
+      top:0;
+      left: -92px;
+}
 </code></pre>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p>#loginBtn{
+          position:relative;
+          top: 20px;
+          left: 238px;
+   }
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */</p>
 
-<h3>Designer Templates</h3>
+<pre><code>@media (max-width: 979px) {
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+  .carousel .item {
+    height: 400px;
+  }
+  .carousel img {
+    width: auto;
+    height: 400px;
+  }
 
-<h3>Rather Drive Stick?</h3>
+  }
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
 
-<h3>Authors and Contributors</h3>
+@media (max-width: 767px) {
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+  .carousel {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+  .carousel .container {
 
-<h3>Support or Contact</h3>
+  }
+  .carousel .item {
+    height: 300px;
+  }
+  .carousel img {
+    height: 300px;
+  }
+  .carousel-caption {
+    width: 65%;
+    padding: 0 70px;
+    margin-top: 100px;
+  }
+  .carousel-caption h1 {
+    font-size: 30px;
+  }
+  .carousel-caption .lead,
+  .carousel-caption .btn {
+    font-size: 18px;
+  }
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+
+
+  }
+&lt;/style&gt;
+
+&lt;!-- HTML5 shim, for IE6-8 support of HTML5 elements --&gt;
+&lt;!--[if lt IE 9]&gt;
+  &lt;script src="http://html5shim.googlecode.com/svn/trunk/html5.js"&gt;&lt;/script&gt;
+&lt;![endif]--&gt;
+
+&lt;!-- Fav and touch icons --&gt;
+&lt;link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png"&gt;
+&lt;link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png"&gt;
+  &lt;link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png"&gt;
+                &lt;link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png"&gt;
+                               &lt;link rel="shortcut icon" href="../assets/ico/favicon.png"&gt;
+</code></pre>
+
+<p></p>
+
+<p></p>
+
+<pre><code>&lt;!-- Carousel
+================================================== --&gt;
+&lt;br&gt;
+&lt;div class='span8'&gt;
+&lt;div id="myCarousel" class="carousel slide"&gt;
+  &lt;div class="carousel-inner"&gt;
+    &lt;div class="item active"&gt;
+      &lt;img src="../assets/img/examples/slide-01.jpg" alt=""&gt;
+      &lt;div class="container"&gt;
+        &lt;div class="carousel-caption"&gt;
+          &lt;h1&gt;About Osmosis&lt;/h1&gt;
+          &lt;p class="lead"&gt;The nickname variable was loaded via AJAX. This shows that the basics are in place. You now need to do this for all of the other views.&lt;/p&gt;
+          &lt;a class="btn btn-large btn-primary" href="#contact"&gt;Contact&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="item"&gt;
+      &lt;img src="../assets/img/examples/slide-02.jpg" alt=""&gt;
+      &lt;div class="container"&gt;
+        &lt;div class="carousel-caption"&gt;
+          &lt;h1&gt;This awesome app will change the world.&lt;/h1&gt;
+          &lt;ul class="lead"&gt;
+            &lt;li&gt; yea&lt;/li&gt;
+            &lt;li&gt; yea&lt;/li&gt;
+            &lt;li&gt; yea&lt;/li&gt;
+
+          &lt;/ul&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="item"&gt;
+      &lt;img src="../assets/img/examples/slide-03.jpg" alt=""&gt;
+      &lt;div class="container"&gt;
+        &lt;div class="carousel-caption"&gt;
+          &lt;h1&gt;One more for good measure.&lt;/h1&gt;
+          &lt;p class="lead"&gt;This is an awesome application! Woohoo!&lt;/p&gt;
+          &lt;a class="btn btn-large btn-primary" href="#"&gt;Browse gallery&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;a class="left carousel-control" href="#myCarousel" data-slide="prev"&gt;&amp;lsaquo;&lt;/a&gt;
+  &lt;a class="right carousel-control" href="#myCarousel" data-slide="next"&gt;&amp;rsaquo;&lt;/a&gt;
+&lt;/div&gt;&lt;!-- /.span8 --&gt;
+&lt;/div&gt;&lt;!-- /.carousel --&gt;
+</code></pre>
+
+
+
+<p></p><div align="left">
+
+<pre><code>  &lt;!-- Sign up --&gt;
+
+    &lt;div class="span4"&gt;
+
+      &lt;br&gt;&lt;br&gt;&lt;br&gt;
+      &lt;h1&gt;LOGIN&lt;/h1&gt;
+      &lt;br&gt;
+      &lt;br&gt;
+      &lt;br&gt;    
+
+    &lt;form name="login" ng-controller="Ctrl"&gt;
+      Email &lt;input type="email" name="email" ng-model="text" id="email" required&gt;
+        &lt;br&gt;
+
+        Password &lt;input type="password" name="password" ng-model="password" id="password" required&gt;
+
+      &lt;div class="control-group"&gt;
+        &lt;div class="controls"&gt;
+          &lt;button type="submit" class="btn" id="loginBtn"&gt;Login &amp;raquo&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+
+
+
+
+
+
+
+&lt;/div&gt;&lt;!-- /.span4 --&gt;
+</code></pre>
+
+<p></p>
+</div>&lt;!-- End of Sign up ---&gt;
+
+<pre><code>&lt;!-- Marketing messaging and featurettes
+================================================== --&gt;
+&lt;!-- Wrap the rest of the page in another container to center all the content. --&gt;
+
+
+  &lt;!-- FOOTER --&gt;
+
+  &lt;div class='span12'&gt;
+  &lt;footer&gt;
+
+    &lt;p&gt;&amp;copy; 2013 Osmosis &amp;middot; &lt;a href="#"&gt;Privacy&lt;/a&gt; &amp;middot; &lt;a href="#"&gt;Terms&lt;/a&gt;&lt;/p&gt;
+  &lt;/footer&gt;
+  &lt;/div&gt;&lt;!-- /.span12 --&gt;
+
+&lt;/div&gt;&lt;!-- /.container --&gt;
+
+
+
+&lt;!-- Le javascript
+================================================== --&gt;
+&lt;!-- Placed at the end of the document so the pages load faster --&gt;
+&lt;script src="lib/angular/angular.min.js"&gt;&lt;/script&gt;
+&lt;script src="lib/angular/angular-resource.min.js"&gt;&lt;/script&gt;
+&lt;script src="js/controllers.js"&gt;&lt;/script&gt;
+&lt;script src="js/app.js"&gt;&lt;/script&gt;
+&lt;script src="../test/lib/angular/angular-mocks.js"&gt;&lt;/script&gt;
+
+
+&lt;script src="../assets/js/jquery.js"&gt;&lt;/script&gt;
+&lt;script src="../assets/js/bootstrap-transition.js"&gt;&lt;/script&gt;
+&lt;script src="../assets/js/bootstrap-alert.js"&gt;&lt;/script&gt;
+&lt;script src="../assets/js/bootstrap-modal.js"&gt;&lt;/script&gt;
+&lt;script src="../assets/js/bootstrap-dropdown.js"&gt;&lt;/script&gt;
+&lt;script src="../assets/js/bootstrap-scrollspy.js"&gt;&lt;/script&gt;
+&lt;script src="../assets/js/bootstrap-tab.js"&gt;&lt;/script&gt;
+&lt;script src="../assets/js/bootstrap-tooltip.js"&gt;&lt;/script&gt;
+&lt;script src="../assets/js/bootstrap-popover.js"&gt;&lt;/script&gt;
+&lt;script src="../assets/js/bootstrap-button.js"&gt;&lt;/script&gt;
+&lt;script src="../assets/js/bootstrap-collapse.js"&gt;&lt;/script&gt;
+&lt;script src="../assets/js/bootstrap-carousel.js"&gt;&lt;/script&gt;
+&lt;script src="../assets/js/bootstrap-typeahead.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  !function ($) {
+    $(function(){
+      // carousel demo
+      $('#myCarousel').carousel()
+    })
+  }(window.jQuery)
+&lt;/script&gt;
+</code></pre>
+
+<p>
+</p>
       </section>
     </div>
 
