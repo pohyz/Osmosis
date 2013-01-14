@@ -180,20 +180,24 @@
         <fieldset>  
           <legend>Update profile</legend>  
           <div class="control-group">  
-            <label class="control-label" for="input01">Registration No.*</label>  
+            <label class="control-label" for="input01">Display Name*</label>  
             <div class="controls">  
               <input type="text" class="input-xlarge" id="input01" required>  
         
             </div> 
             <br/> 
-                      <div class="control-group">  
-            <label class="control-label" for="input02">Company's Name*</label>  
-            <div class="controls">  
-              <input type="text" class="input-xlarge" id="input02" required>  
+<div class="control-group">
+  <label class="control-label" for="FirstName">Name*</label>
+    <div class="controls row-fluid">
+        <div class="span2 row"><input class="span12" id="FirstName" name="FirstName" placeholder="Firstname" type="text" value="" required /></div>
+    
+        <div class="span2 row"><input class="span12" id="LastName" name="LastName" placeholder="Lastname" type="text" value="" required /></div>
+      
+    </div>
+</div>
+
            
-            </div> 
-            <br/>
-                      <div class="control-group">  
+     <div class="control-group">  
             <label class="control-label" for="input03">Email Address*</label>  
             <div class="controls">  
               <input type="text" class="input-xlarge" id="input03" required>  
@@ -202,36 +206,69 @@
             <br/>
             
             <div class="control-group">  
-            <label class="control-label" for="input04">Company's Website</label>  
+            <label class="control-label" for="input04">Current Company</label>  
             <div class="controls">  
               <input type="text" class="input-xlarge" id="input04">  
       
             </div> 
             <br/>
+            
+           <div class="control-group">  
+            <label class="control-label" for="input04">Certification(s)</label>  
+            <div class="controls">  
+              <input type="text" class="input-xlarge" id="input04">  
+      
+            </div> 
+            <br/>
+           <div class="control-group">  
+            <label class="control-label" for="input04">Key Skills*</label>  
+            <div class="controls">  
+              <input type="text" class="input-xlarge" id="input04">  
+      
+            </div> 
+            <br/>            
+            
        
           <div class="control-group">  
-            <label class="control-label" for="optionsRadios">Company's type*</label>  
+            <label class="control-label" for="optionsRadios">Highest Qualification	*</label>  
             <div class="controls">  
 		<label class="radio">
 		  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-		  LLC
+		  Nitec
 		</label>
 		<label class="radio">
 		  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-		  LLP
+		  Higher Nitec
 		</label>
 		<label class="radio">
 		  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-		  PLC
+		  Diploma
 		</label>
 				<label class="radio">
 		  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-		 Sole-Proprietorship
+		 Degree
 		</label>
+		
+		<label class="radio">
+		  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+		 Masters
+		</label>
+		
+				<label class="radio">
+		  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+		 Doctorate
+		</label>
+		
+		<label class="radio">
+		  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+		 Professional 
+		</label>		
+		
+		
             </div>  
           </div>  
           <div class="control-group">  
-            <label class="control-label" for="select01" required>Industry*</label>  
+            <label class="control-label" for="select01" required>Current Location*</label>  
             <div class="controls">  
               <select id="select01">  
                 <option>something</option>  
@@ -244,11 +281,13 @@
           </div>  
  
            <div class="control-group">  
-            <label class="control-label" for="textarea">About Company</label>  
+            <label class="control-label" for="textarea">About Yourself</label>  
             <div class="controls">  
               <textarea class="input-xlarge" id="textarea" rows="3"></textarea>  
             </div>  
           </div>  
+          
+
           <div class="form-actions">  
             <button type="submit" class="btn btn-primary">Save changes</button>  
             <button class="btn">Cancel</button>  
