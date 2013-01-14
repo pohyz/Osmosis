@@ -21,22 +21,41 @@
 	     	font-size:100pt;
       }
        
-      
-      
-/*
-      #updateButton{
+      #welcome_msg{
 	      position:relative;
-	      left:1100px;
+	      top: 5px;
+	      float:right;
+	      color:grey;
 	      
       }
       
-      #photoPlaceHolder{
-	      
+      #plus_sign{
 	      position:relative;
-	      left:1100px;
+	      top: -5px;
+	      left:-10px;
+	      color:red;
 	      
       }
-*/
+      
+      #notify_btn{
+	      position:relative;
+	      top: 0px;
+	      left:10px;
+      
+      }
+      
+      #notify_badge{
+	      position:relative;
+	      top: -5px;
+	      left:-90px;
+
+      }
+      
+      #logo_img{
+	      position:relative;
+	      top: 10px;
+	      left: 0px;
+      }
     </style>
     <link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
 
@@ -63,21 +82,29 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Osmosis</a> <!-- TO ATTACH LOGO IMG HERE -->
+          <img src="img/osmosisLogo.png" width=9% id="logo_img">
+          <div id="welcome_msg">Welcome, {{name}} | <a href="index-for-log-out.html" >Logout</a></div>
           <br>
           <br>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li class="active"><a href="#">HOME</a></li>
-              <li><a href="#about">PROFILE</a></li>
+         
+            <ul class="nav" >
+              <li class="active"><a href="#" id="tabcolor"><i class="icon-home icon-white"></i> HOME</a></li>
+              <li><a href="#about" >PROFILE</a></li>
               <li><a href="#contact">PROJECT CATALOG</a></li>
               <li><a href="#contact">TEAM CATALOG</a></li>
               <li><a href="#contact">FAQ</a></li>
               
             </ul>
             
-          </div><!--/.nav-collapse -->
-        </div>
+            <div align="right">
+            <button class="btn btn-small btn-warning" type="button" id="notify_btn"><b>Notification</b></button><span class="badge badge-important" id="notify_badge">1</span>
+            <button class="btn btn-small btn-primary" type="button">Create Proposal</button>
+            <i class="icon-white icon-plus" id="plus_sign"></i><button class="btn btn-small btn-primary" type="button">Create Project</button>
+            <i class="icon-white icon-plus" id="plus_sign"></i><button class="btn btn-small btn-primary" type="button">Create Team</button>
+            <i class="icon-white icon-plus" id="plus_sign"></i>
+            </div>
+            
+         </div>
       </div>
     </div>
 
