@@ -28,12 +28,31 @@
       }
 */
 
+	.thumbnailss{
+		float:right;
+		margin-right: 230px;
+		width:1000px;
+		
+	}
+
 	#pro{
 		position:relative;
 		top:25px;
 		
 		
 		
+		
+	}
+	
+	#sort-by{
+		position:relative;
+		right:-880px;	
+		
+	}
+	
+	#sortTeams{
+		position:relative;
+		right:-900px;
 		
 	}
       #welcome_msg{
@@ -222,7 +241,23 @@
                     <div class="accordion-inner">
 <div class = "teams">
   	<div class ="row span12 offset">
-	 
+	 	 
+	 <span id="sort-by">Sort by:  </span>
+<select ng-model="orderProp" id="sortTeams">
+  <option value="name">Alphabetical</option>
+  <option value="age">Newest</option>
+</select>
+
+<!--
+<ul class="teams">
+  <li ng-repeat="team in teams | filter:query | orderBy:orderProp">
+    {{team.name}}
+    <p>{{team.snippet}}</p>
+  </li>
+</ul>
+-->
+	
+
 	 <div class="pagination pagination-right">
 	  <ul>
 	    <li><a href="#">Prev</a></li>
@@ -234,7 +269,7 @@
 	  </ul>
 	</div>
 	  			
-	  			<u1 class = "thumbnails"> 
+	  			<u1 class = "thumbnailss" > 
 	  				<li class = "span2"> 
 	  				
 		  				<div class ="thumbnail">
@@ -307,8 +342,34 @@
                   <div id="collapseTwo" class="accordion-body collapse">
                     <div class="accordion-inner">
 <div class="row">
-        <div class="span10 offset1">
+        <div class="span12 offset">
+	 <span id="sort-by">Sort by:  </span>
+<select ng-model="orderProp" id="sortTeams">
+  <option value="name">Alphabetical</option>
+  <option value="age">Newest</option>
+</select>
 
+<!--
+<ul class="teams">
+  <li ng-repeat="team in teams | filter:query | orderBy:orderProp">
+    {{team.name}}
+    <p>{{team.snippet}}</p>
+  </li>
+</ul>
+-->
+	
+
+	 <div class="pagination pagination-right">
+	  <ul>
+	    <li><a href="#">Prev</a></li>
+	    <li><a href="#">1</a></li>
+	    <li><a href="#">2</a></li>
+	    <li><a href="#">3</a></li>
+	    <li><a href="#">4</a></li>
+	    <li><a href="#">Next</a></li>
+	  </ul>
+	</div>
+	  			
       
       
       <ul class="nav nav-tabs">
@@ -592,8 +653,34 @@
                   <div id="collapseThree" class="accordion-body collapse">
                     <div class="accordion-inner">
 <div class="row">
-        <div class="span12 offset1">
+        <div class="span12 offset">
+	 <span id="sort-by">Sort by:  </span>
+<select ng-model="orderProp" id="sortTeams">
+  <option value="name">Alphabetical</option>
+  <option value="age">Newest</option>
+</select>
 
+<!--
+<ul class="teams">
+  <li ng-repeat="team in teams | filter:query | orderBy:orderProp">
+    {{team.name}}
+    <p>{{team.snippet}}</p>
+  </li>
+</ul>
+-->
+	
+
+	 <div class="pagination pagination-right">
+	  <ul>
+	    <li><a href="#">Prev</a></li>
+	    <li><a href="#">1</a></li>
+	    <li><a href="#">2</a></li>
+	    <li><a href="#">3</a></li>
+	    <li><a href="#">4</a></li>
+	    <li><a href="#">Next</a></li>
+	  </ul>
+	</div>
+	  			
           
       <ul class="nav nav-tabs">
 	  <li class="active">
@@ -820,8 +907,34 @@
     <div id="collapseFour" class="accordion-body collapse">
       <div class="accordion-inner">
       <div class="row">
-        <div class="span12 offset1">
- 
+        <div class="span12 offset">
+	 <span id="sort-by">Sort by:  </span>
+<select ng-model="orderProp" id="sortTeams">
+  <option value="name">Alphabetical</option>
+  <option value="age">Newest</option>
+</select>
+
+<!--
+<ul class="teams">
+  <li ng-repeat="team in teams | filter:query | orderBy:orderProp">
+    {{team.name}}
+    <p>{{team.snippet}}</p>
+  </li>
+</ul>
+-->
+	
+
+	 <div class="pagination pagination-right">
+	  <ul>
+	    <li><a href="#">Prev</a></li>
+	    <li><a href="#">1</a></li>
+	    <li><a href="#">2</a></li>
+	    <li><a href="#">3</a></li>
+	    <li><a href="#">4</a></li>
+	    <li><a href="#">Next</a></li>
+	  </ul>
+	</div>
+	  			 
 
       <ul class="nav nav-tabs">
 	  <li class="active">
